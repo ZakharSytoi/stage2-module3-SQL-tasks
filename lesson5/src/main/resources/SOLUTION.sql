@@ -1,13 +1,13 @@
 SELECT * FROM payment WHERE amount >= 500;
 
-SELECT * FROM student WHERE DATEDIFF(YEAR, birthday, CURDATE()) > 20;
+SELECT * FROM student WHERE DATEADD(YEAR, -20, CURRENT_DATE) > birthday;
 
-SELECT * FROM student WHERE DATEDIFF(YEAR, birthday, CURDATE()) < 20 AND groupnumber = 10;
+SELECT * FROM student WHERE DATEADD(YEAR, -20, CURRENT_DATE) < birthday AND groupnumber = 10;
 
 
 SELECT * FROM student WHERE name = 'Mike' OR groupnumber IN(4, 5, 6);
 
-SELECT * FROM payment WHERE DATEDIFF(MONTH, payment_date, CURDATE()) < 8;
+SELECT * FROM payment WHERE DATEADD(MONTH, -8, CURRENT_DATE) < payment_date;
 
 SELECT * FROM student WHERE name LIKE 'A%';
 
